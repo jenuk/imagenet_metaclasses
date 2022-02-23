@@ -402,8 +402,11 @@ if __name__ == '__main__':
         import seaborn as sns
 
         fig, ax = plt.subplots(1, 3)
+        ax[0].set_title("#train images")
         sns.stripplot(y = [leaf.count_train for leaf in leafs], ax=ax[0])
+        ax[1].set_title("#validation images")
         sns.stripplot(y = [leaf.count_val for leaf in leafs], ax=ax[1])
+        ax[2].set_title("leaf depth")
         sns.stripplot(y = [leaf.depth for leaf in leafs], ax=ax[2])
         plt.tight_layout()
         plt.show()
